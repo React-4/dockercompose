@@ -1,14 +1,14 @@
 services:
   front:
-    container_name: front
-    image: hamgeonwook/4zopalza_frontend:latest
+    container_name: frontend
+    image: hamgeonwook/4zopalza_front:latest
     ports:
       - "80:80"
     restart: always
 
   back:
-    container_name: back
-    image: hamgeonwook/4zopalza_backend:latest
+    container_name: backend
+    image: hamgeonwook/4zopalza_back:latest
     ports:
       - "8080:8080"
     restart: always
