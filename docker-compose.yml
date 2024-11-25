@@ -1,21 +1,23 @@
 services:
   front:
+    container_name: front
     image: hamgeonwook/4zopalza_front:latest
     ports:
       - "80:80"
     restart: always
 
   back:
+    container_name: back
     image: hamgeonwook/4zopalza_back:latest
-    ports:
-      - "8080:8080"
     restart: always
 
   data:
+    container_name: data
     image: hamgeonwook/4zopalza_data:latest
     restart: always
 
   redis:
+    container_name: redis
     image: redis:latest
     ports:
       - "6379:6379"
