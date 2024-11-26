@@ -35,4 +35,5 @@ services:
       MYSQL_DATABASE: disclo
     volumes:
       - mysql-data:/var/lib/mysql
-    
+volumes:
+  mysql-data:
