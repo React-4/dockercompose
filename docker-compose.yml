@@ -27,7 +27,7 @@ services:
   
   mysql:
     container_name: mysql
-    image: qpwisu/buildx:x86
+    image: mysql:latest
     ports:
       - "3306:3306"
     environment:
