@@ -16,7 +16,6 @@ services:
   data:
     container_name: data
     image: hamgeonwook/4zopalza_data:latest
-    restart: always
 
   redis:
     container_name: redis
