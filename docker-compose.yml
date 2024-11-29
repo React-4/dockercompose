@@ -39,6 +39,7 @@ services:
       - redis
       - mysql
     restart: always
+    command: python update.py  # 추가
 
   redis:
     container_name: redis
