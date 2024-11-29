@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   front:
     container_name: frontend
@@ -16,6 +18,27 @@ services:
   data:
     container_name: data
     image: hamgeonwook/4zopalza_data:latest
+    environment:
+      APP_KEY: ${APP_KEY}
+      APP_SECRET: ${APP_SECRET}
+      ACC: ${ACC}
+      ACC_NO: ${ACC_NO}
+      TOKEN: ${TOKEN}
+      TOKEN_EXPIRE_TIME: ${TOKEN_EXPIRE_TIME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DART_API_KEY: ${DART_API_KEY}
+      GPT_API_KEY: ${GPT_API_KEY}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+      REDIS_DB: ${REDIS_DB}
+    depends_on:
+      - redis
+      - mysql
+    restart: always
 
   redis:
     container_name: redis
@@ -31,8 +54,10 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: disclo
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - mysql-data:/var/lib/mysql
+    restart: always
+
 volumes:
   mysql-data:
